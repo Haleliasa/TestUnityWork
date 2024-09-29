@@ -2,7 +2,6 @@ using UnityEngine;
 using AxGrid.Base;
 using AxGrid.FSM;
 using AxGrid;
-using UnityEngine.UI;
 
 namespace States {
     public class StateMachine : MonoBehaviourExt {
