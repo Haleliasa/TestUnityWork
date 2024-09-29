@@ -25,7 +25,7 @@ namespace States {
                 new ReadyState(this.properties, startState: "SpinStart"),
                 "Ready");
             this.fsm.Add(
-                new SpinStartState(this.properties, "Spin"),
+                new SpinStartState(this.properties, spinState: "Spin"),
                 "SpinStart");
             this.fsm.Add(
                 new SpinState(this.properties, stopState: "Ready", invokeStartEvent: false),

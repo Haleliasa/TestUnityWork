@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 166443690024627133}
   - component: {fileID: 8447434405214652970}
   m_Layer: 5
-  m_Name: SpriteRouletteItem
+  m_Name: RouletteItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

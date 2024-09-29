@@ -348,7 +348,7 @@ PrefabInstance:
     - target: {fileID: 6428433981419500311, guid: 7d0dec722505441469f87ddfab8f6339,
         type: 3}
       propertyPath: m_Name
-      value: SpriteRoulette
+      value: Roulette
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d0dec722505441469f87ddfab8f6339, type: 3}

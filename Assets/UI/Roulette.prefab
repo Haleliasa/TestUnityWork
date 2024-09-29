@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 48640516093958796}
   - component: {fileID: 9094983964562953982}
   m_Layer: 5
-  m_Name: SpriteRoulette
+  m_Name: Roulette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,12 +55,15 @@ MonoBehaviour:
   center: {fileID: 0}
   spinEvent: SpinStarted
   stopEvent: SpinStopped
-  selectedItemField: 
+  selectedItemField: SelectedItem
   itemHeight: 100
   itemSpacing: 10
   itemCount: 5
   speed: 1000
   accelerationDuration: 3
+  stopOverspinDistance: 75
+  stopOverspinDuration: 0.4
+  stopRollbackDuration: 0.3
 --- !u!114 &9094983964562953982
 MonoBehaviour:
   m_ObjectHideFlags: 0
