@@ -53,8 +53,9 @@ MonoBehaviour:
   itemPrefab: {fileID: 7422945865287334982, guid: eb2f4f811765fd3458c26724f018de1f,
     type: 3}
   center: {fileID: 0}
-  spinEvent: SpinStarted
-  stopEvent: SpinStopped
+  spinOnEvent: SpinStarted
+  stopOnEvent: SpinStopped
+  stoppedEvent: RouletteStopped
   selectedItemField: SelectedItem
   itemHeight: 100
   itemSpacing: 10

@@ -10,21 +10,28 @@ using Item = PooledOrInstantiated<UI.SpriteRouletteItem>;
 namespace UI {
     [RequireComponent(typeof(RectTransform))]
     public class SpriteRoulette : MonoBehaviourExt {
+        [Header(EditorHeaders.References)]
         [SerializeField]
         private SpriteRouletteItem? itemPrefab;
 
         [SerializeField]
         private RectTransform? center;
 
+        [Header(EditorHeaders.Events)]
         [SerializeField]
-        private string? spinEvent;
+        private string? spinOnEvent;
 
         [SerializeField]
-        private string? stopEvent;
+        private string? stopOnEvent;
 
+        [SerializeField]
+        private string? stoppedEvent;
+
+        [Header(EditorHeaders.Model)]
         [SerializeField]
         private string? selectedItemField;
 
+        [Header(EditorHeaders.Properties)]
         [Min(0f)]
         [SerializeField]
         private float itemHeight = 100f;
@@ -163,7 +170,12 @@ namespace UI {
                     this.stopRollbackDuration,
                     overspinOffset,
                     rollbackOffset,
-                    offset => MoveItems(offset));
+                    offset => MoveItems(offset))
+                .Action(() => {
+                    if (!string.IsNullOrEmpty(this.stoppedEvent)) {
+                        Model.EventManager.Invoke(this.stoppedEvent);
+                    }
+                });
         }
 
         [OnAwake]
@@ -173,21 +185,21 @@ namespace UI {
 
         [OnEnable]
         private void Enable() {
-            if (!string.IsNullOrEmpty(this.spinEvent)) {
-                Model.EventManager.AddAction(this.spinEvent, Spin);
+            if (!string.IsNullOrEmpty(this.spinOnEvent)) {
+                Model.EventManager.AddAction(this.spinOnEvent, Spin);
             }
-            if (!string.IsNullOrEmpty(this.stopEvent)) {
-                Model.EventManager.AddAction(this.stopEvent, Stop);
+            if (!string.IsNullOrEmpty(this.stopOnEvent)) {
+                Model.EventManager.AddAction(this.stopOnEvent, Stop);
             }
         }
 
         [OnDisable]
         private void Disable() {
-            if (!string.IsNullOrEmpty(this.spinEvent)) {
-                Model.EventManager.RemoveAction(this.spinEvent, Spin);
+            if (!string.IsNullOrEmpty(this.spinOnEvent)) {
+                Model.EventManager.RemoveAction(this.spinOnEvent, Spin);
             }
-            if (!string.IsNullOrEmpty(this.stopEvent)) {
-                Model.EventManager.RemoveAction(this.stopEvent, Stop);
+            if (!string.IsNullOrEmpty(this.stopOnEvent)) {
+                Model.EventManager.RemoveAction(this.stopOnEvent, Stop);
             }
         }
 
