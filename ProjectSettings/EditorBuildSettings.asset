@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/ExampleFSM/ExampleFSM.unity
-    guid: 4893145005591a446aff42c95ee09d9a
+    path: Assets/Scenes/Main.unity
+    guid: 9c4df2cba729fff4d9381652855d15cc
   m_configObjects: {}
